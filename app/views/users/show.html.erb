@@ -1,10 +1,19 @@
 <div class="row">
   <aside class="col-xs-4">
+    
+    <!--ユーザ名とメールアドレスを表示-->
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @user.name %></h3>
+        <h3 class="panel-title">名前：<%= @user.name %></h3>
       </div>
     </div>
+      
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">メールアドレス：<%= @user.email %></h3>
+      </div>
+    </div>
+    
   </aside>
   <div class="col-xs-8">
   </div>
