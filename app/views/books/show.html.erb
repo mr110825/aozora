@@ -6,3 +6,15 @@
     <h3 class="panel-title">名前：<%= @book.content %></h3>
   </div>
 </div>
+
+
+    <%= @book.id %>  <br>
+    <%= @book.title %>  <br>
+    
+
+<%= form_for @book, url: users_books_path, method: :post do |f| %>
+<%= hidden_field_tag :book_id, @book.id %>
+  <%= f.submit 'Like' %>
+<% end %>
+
+<%= link_to "お気に入り解除",users_book_path(@book),method: :delete %>

@@ -1,6 +1,15 @@
 <!--検索フォーム---->
 <%= search_form_for @search do |f| %>
+  <p>タイトル</p>
   <%= f.search_field :title_cont %>
+  
+  <p>著者</p>
+  <%= f.search_field :authors_name_cont %>
+  
+  <p>カテゴリー</p>
+  <%= f.search_field :category_name_cont %>
+  
+  
   <div class="actions"><%= f.submit "検索" %></div>
 <% end %>
 

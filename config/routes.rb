@@ -7,9 +7,16 @@ Rails.application.routes.draw do
 
   get 'signup', to: 'users#new'
   
-  resources :users, only: [:index, :show, :new, :create]
-  
-  
-  # 本の検索・閲覧
-   resources :books, only: [:index, :show]
+    resources :users, only: [:index, :show, :new, :create] do
+        member do
+         get :likes
+        end
+    end
+    
+# 本の検索・閲覧
+    resources :books, only: [:index, :show]
+    
+# お気に入り機能
+    resources :users_books, only: [:create, :destroy]
+   
 end
