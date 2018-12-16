@@ -12,9 +12,16 @@
     <%= @book.title %>  <br>
     
 
+
+<!--お気に入り登録ボタン-->
 <%= form_for @book, url: users_books_path, method: :post do |f| %>
 <%= hidden_field_tag :book_id, @book.id %>
   <%= f.submit 'Like' %>
 <% end %>
 
-<%= link_to "お気に入り解除",users_book_path(@book),method: :delete %>
+<!--お気に入り登録ボタン2-->
+<%= form_for @book, url: users_books_path, method: :post do |f| %>
+    <%= hidden_field_tag :book_id, @book.id %>
+    <%= hidden_field_tag :user_id, @book.user_id %>
+  <%= f.submit 'LIKE' %>
+<% end %>

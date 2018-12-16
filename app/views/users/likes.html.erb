@@ -1,0 +1,5 @@
+    <ul>
+    <% @user.users_books.each do |book| %>
+        <li><%= book.title %></li>
+    <% end %>
+    </ul>
