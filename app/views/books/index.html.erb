@@ -1,4 +1,5 @@
 <!--検索フォーム---->
+<h2>検索フォーム</h2>
 <%= search_form_for @search do |f| %>
   <p>タイトル</p>
   <%= f.search_field :title_cont %>
@@ -9,11 +10,14 @@
   <p>カテゴリー</p>
   <%= f.search_field :category_name_cont %>
   
+  <p>出版年</p>
+  <%= f.search_field :publication_year_cont %>
   
   <div class="actions"><%= f.submit "検索" %></div>
 <% end %>
 
 <!--検索結果-->
+<h2>検索結果</h2>
 <% @books.each do |book| %>
     <%= book.id %>  <br>
     <%= book.title %>  <br>

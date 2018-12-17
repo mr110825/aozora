@@ -14,11 +14,25 @@
       </div>
     </div>
     
+    <!--お気に入り機能・ハイライト・検索の表示-->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= link_to 'お気に入りページへ', likes_user_path %></h3>
+      </div>
+    </div>
     
-    <li><%= link_to 'お気に入りページへ', likes_user_path %></li>
-    <li><%= link_to 'ハイライトページへ', books_path %></li>
-    <li><%= link_to '検索ページへ', books_path %></li>
+    <!--<div class="panel panel-default">-->
+    <!--  <div class="panel-heading">-->
+    <!--    <h3 class="panel-title"><%= link_to 'ハイライトページへ', books_path %></h3>-->
+    <!--  </div>-->
+    <!--</div>-->
     
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= link_to '検索ページへ', books_path %></h3>
+      </div>
+    </div>
+
     
   </aside>
   <div class="col-xs-8">

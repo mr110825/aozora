@@ -1,21 +1,13 @@
-<h1>Books#show</h1>
+<h1><%= @book.title %></h1>
 
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">名前：<%= @book.content %></h3>
-  </div>
-</div>
 
-
-    <%= @book.id %>  <br>
-    <%= @book.title %>  <br>
-    
-
+<%= @book.content %><br>
 
 <!--お気に入り登録ボタン-->
+<% if logged_in? %>
 <%= form_for @book, url: users_books_path, method: :post do |f| %>
 <%= hidden_field_tag :book_id, @book.id %>
   <%= f.submit 'Like' %>
 <% end %>
-
+<% end %>
