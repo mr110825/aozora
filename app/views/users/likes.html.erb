@@ -1,5 +1,6 @@
-    <ul>
-    <% @user.users_books.each do |book| %>
-        <li><%= book.title %></li>
-    <% end %>
-    </ul>
+<% @user.likes.each do |like| %>
+    <%= like.id %>
+    <%= like.title%>
+    
+    
+<% end %>

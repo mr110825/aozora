@@ -8,5 +8,8 @@ class Book < ApplicationRecord
   
 # カテゴリーデータベースとの連携
   belongs_to :category
-
+  
+# お気に入り機能
+  has_many :users, through: :users_books
+  has_many :users_books
 end

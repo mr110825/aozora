@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :users_books
   has_many :likes, through: :users_books, source: :book
   has_many :reverses_of_users_books, class_name: 'Users_book', foreign_key: 'book_id'
+  has_many :followers, through: :reverses_of_users_book, source: :user
   
   
   def like(other_user)
