@@ -1,6 +1,7 @@
+<h1>お気に入り作品一覧</h1>
+
 <% @user.likes.each do |like| %>
-    <%= like.id %>
-    <%= like.title%>
-    
-    
+    <%= like.title %>  <br>
+    <%= like.publication_year.strftime('%Y年') %>  <br>
+    <p><%= link_to '作品へ', book_path(like) %></p>
 <% end %>

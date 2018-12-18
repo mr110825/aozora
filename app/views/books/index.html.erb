@@ -17,10 +17,9 @@
 <% end %>
 
 <!--検索結果-->
-<h2>検索結果</h2>
+<h2>作品一覧</h2>
 <% @books.each do |book| %>
-    <%= book.id %>  <br>
     <%= book.title %>  <br>
-    <%= book.content %>
-    <p><%= link_to 'content', book_path(book) %></p>
+    <%= book.publication_year.strftime('%Y年') %>  <br>
+    <p><%= link_to '作品へ', book_path(book) %></p>
 <% end %>

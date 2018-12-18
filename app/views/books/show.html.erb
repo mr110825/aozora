@@ -1,13 +1,21 @@
 <h1><%= @book.title %></h1>
 
-
-
-<%= @book.content %><br>
+<%= simple_format(@book.content) %><br>
 
 <!--お気に入り登録ボタン-->
 <% if logged_in? %>
-<%= form_for @book, url: users_books_path, method: :post do |f| %>
-<%= hidden_field_tag :book_id, @book.id %>
-  <%= f.submit 'Like' %>
+  <% if current_user.likes?(@book) %>
+    <%= form_for(current_user.users_books.find_by(book_id: @book.id), html: { method: :delete }) do |f| %>
+      <%= hidden_field_tag :book_id, @book.id %>
+      <%= f.submit 'お気に入り解除' %>
+    <% end %>
+
+  <% else %>
+    <%= form_for @book, url: users_books_path, method: :post do |f| %>
+      <%= hidden_field_tag :book_id, @book.id %>
+      <%= f.submit 'お気に入り' %>
+    <% end %>
+
+  <% end %>
 <% end %>
-<% end %>
+  
